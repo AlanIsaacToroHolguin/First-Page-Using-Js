@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <button onclick="Greeting()">
+        Greet
+    </button>
+<script>
+    function Greeting(){
+        alert("Hello World")
+    }
+</script>
+    </script>
+
+    <button onclick="addListItem()">Add Item</button>
+    <ul id="list"></ul>
+    
+    <script>
+    function addListItem() {
+    var listItem = document.createElement("li");
+    listItem.textContent = "New Item";
+    document.getElementById("list").appendChild(listItem);
+    }
+    </script>
+</body>
+</html>
