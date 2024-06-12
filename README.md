@@ -1,1 +1,1 @@
-# First-Page-Using-Js
+# Learning JavaScript
