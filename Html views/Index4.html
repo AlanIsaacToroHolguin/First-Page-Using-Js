@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+    <script>
+
+        // Tipos Primitivos
+
+// Number
+let radius = 5;
+let area = Math.PI * radius * radius;
+console.log(`The area of the circle is ${area}`);
+
+// String
+let greeting = 'hello world';
+let upperGreeting = greeting.toUpperCase();
+console.log(upperGreeting); // "HELLO WORLD"
+
+// Boolean
+let age = 20;
+let isAdult = age >= 18;
+console.log(isAdult); // true
+
+// Undefined
+let x;
+if (x === undefined) {
+    console.log('x is undefined');
+}
+
+// Null
+let empty = null;
+console.log(empty); // null
+empty = 'Now I have a value';
+console.log(empty); // "Now I have a value"
+
+// Symbol
+let uniqueID = Symbol('id');
+let user = {
+    [uniqueID]: 12345
+};
+console.log(user[uniqueID]); // 12345
+
+// BigInt
+let bigIntNum = 1234567890123456789012345678901234567890n;
+let anotherBigInt = 9876543210987654321098765432109876543210n;
+let result = bigIntNum + anotherBigInt;
+console.log(result); // 11111111101111111110111111111011111111100n
+
+        // Tipos de Referencia
+
+// Object
+let person = {
+    name: 'John',
+    age: 30,
+    greet() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+};
+person.greet(); // "Hello, my name is John"
+
+// Array
+let numbers = [1, 2, 3, 4, 5, [1, 2, 3]];
+numbers.push(6);
+console.log(numbers); // [1, 2, 3, 4, 5, [1, 2, 3], 6]
+
+// Function
+function sum(a, b) {
+    return a + b;
+}
+let sumResult = sum(3, 4);
+console.log(sumResult); // 7
+
+// Date
+let now = new Date();
+console.log(now); // Current date and time
+
+// RegExp
+let pattern = /^\d+$/;
+let str = '12345';
+console.log(pattern.test(str)); // true
+
+// Map
+let map = new Map();
+map.set('name', 'Alice');
+map.set('age', 25);
+console.log(map.get('name')); // "Alice"
+console.log(map.get('age')); // 25
+
+// Set
+let set = new Set();
+set.add(1);
+set.add(2);
+set.add(2); // Duplicate, will not be added
+console.log(set); // Set(2) {1, 2}
+    </script>
+    
+</body>
+</html>
