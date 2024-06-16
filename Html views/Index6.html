@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="/Style.css">
+</head>
+<body>
+    <input type="number" id="Chosentime">
+    <button onclick="Runtime()">Alarm</button>
+    <h1 id="TextAlarm">Apagado</h1>
+
+    <script>
+        let SecondsElement=document.getElementById("Chosentime");
+        let ElementTextAlarm=document.getElementById("TextAlarm");
+
+        function Runtime(){
+            setTimeout(Completedtime,1000*SecondsElement.value);
+        }
+        function Completedtime(){
+            ElementTextAlarm.textContent="Encendido";
+            ElementTextAlarm.style.color="green";
+
+        }
+    </script>
+    
+</body>
+</html>

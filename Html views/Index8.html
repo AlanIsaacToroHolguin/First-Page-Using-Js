@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date And Time</title>
+    <link rel="stylesheet" href="/Css views/Style2.css">
+</head>
+<body onload="StartClock()">
+    
+    <input type="number" id="Chosentime" placeholder="Enter seconds">
+    <button onclick="Runtime()">Alarm</button>
+    <h1 id="TextAlarm">00:00:00</h1>
+    
+    <audio src="/Html views/Audio/alarma.mp3" type="audio/mpeg" id="AlarmAudio">
+        Sound not enabled
+    </audio>
+
+    <script>
+        function Runtime() {
+            let SecondsElement = document.getElementById("Chosentime");
+            let seconds = Number(SecondsElement.value);
+            if (isNaN(seconds) || seconds <= 0) {
+                alert("Please enter a valid number of seconds.");
+                return;
+            }
+            setTimeout(Completedtime, 1000 * seconds);
+        }
+
+        function Completedtime() {
+            let ElementTextAlarm = document.getElementById("TextAlarm");
+            let ElementoAlarmSound = document.getElementById("AlarmAudio");
+            ElementTextAlarm.style.color = "green";
+            ElementoAlarmSound.play();
+        }
+
+        function StartClock() {
+            setInterval(tictac, 1000);
+        }
+
+        function tictac() {
+            let CurrentTime = new Date();
+            let hours = String(CurrentTime.getHours()).padStart(2, "0");
+            let minutes = String(CurrentTime.getMinutes()).padStart(2, "0");
+            let seconds = String(CurrentTime.getSeconds()).padStart(2, "0");
+
+            let TextTime = hours + ":" + minutes + ":" + seconds;
+            let ElementTextAlarm = document.getElementById("TextAlarm");
+            ElementTextAlarm.textContent = TextTime;
+        }
+    </script>
+    
+</body>

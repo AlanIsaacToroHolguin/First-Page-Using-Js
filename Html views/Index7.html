@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer With Audio </title>
+    <link rel="stylesheet" href="/Style.css">
+</head>
+<body>
+    <input type="number" id="Chosentime">
+    <button onclick="Runtime()">Alarm</button>
+    <h1 id="TextAlarm">Apagado</h1>
+    
+    <audio src="/Html views/Audio/alarma.mp3" type="audio/mpeg" id="AlarmAudio">
+        sound not enabled
+    </audio>
+
+    <!--<audio controls>
+       <source src="/Html views/Audio/alarma.mp3" type="audio/mpeg" > 
+       sound not enabled
+    </audio>
+     --> 
+    <script>
+        let SecondsElement=document.getElementById("Chosentime");
+        let ElementTextAlarm=document.getElementById("TextAlarm");
+        let ElementoAlarmSound=document.getElementById("AlarmAudio");
+
+        function Runtime(){
+            setTimeout(Completedtime,1000*SecondsElement.value);
+        }
+        function Completedtime(){
+            ElementTextAlarm.textContent="Encendido";
+            ElementTextAlarm.style.color="green";
+            ElementoAlarmSound.play();
+
+        }
+    </script>
+    
+</body>
+</html>
